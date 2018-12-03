@@ -21,3 +21,17 @@ Scenario: Create a new employee with manadatory details
 	#And I click the save button
 	#Then I should see all the details saved in my application and DB
 
+Scenario Outline: Create a new employee with manadatory details for different iteration
+	#Given I have opened my application
+	#Then I should see employee details
+	When I fill all the mandatory details in form <Name>, <Age> and <Phone>
+	#And I click the save button
+	#Then I should see all the details saved in my application and DB
+Examples:
+	|Name	|Age	|Phone		|
+	|John	|40		|9009009090	|
+	|Jane	|80		|8008009090	|
+	|Joe	|20		|8008009090	|
+
+
+

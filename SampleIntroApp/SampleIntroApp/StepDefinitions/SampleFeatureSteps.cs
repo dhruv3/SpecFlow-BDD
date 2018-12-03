@@ -46,6 +46,16 @@ namespace SampleIntroApp
             }
         }
 
+        [When(@"I fill all the mandatory details in form (.*), (.*) and (.*)")]
+        public void WhenIFillAllTheMandatoryDetailsInFormJohnAnd(string name, int age, Int64 phone)
+        {
+            Console.WriteLine(age);
+            Console.WriteLine(name);
+            Console.WriteLine(phone);
+        }
+
+
+
 
     }
 }
