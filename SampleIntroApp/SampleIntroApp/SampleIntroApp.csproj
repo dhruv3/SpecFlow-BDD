@@ -64,6 +64,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SampleFeature.feature</DependentUpon>
     </Compile>
+    <Compile Include="StepDefinitions\EmployeeDetails.cs" />
     <Compile Include="StepDefinitions\SampleFeatureSteps.cs" />
   </ItemGroup>
   <ItemGroup>
