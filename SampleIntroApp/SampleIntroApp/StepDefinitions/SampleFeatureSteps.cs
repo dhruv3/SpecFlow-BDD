@@ -11,21 +11,24 @@ namespace SampleIntroApp
     class SampleFeatureSteps
     {
         [Given(@"I have entered (.*) into the calculator")]
-        public void GivenIHaveEnteredIntoTheCalculator(int p0)
+        public void GivenIHaveEnteredIntoTheCalculator(int numbers)
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine(numbers);
         }
 
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("Add button is pressed");
         }
 
         [Then(@"the result should be (.*) on the screen")]
-        public void ThenTheResultShouldBeOnTheScreen(int p0)
+        public void ThenTheResultShouldBeOnTheScreen(int result)
         {
-            ScenarioContext.Current.Pending();
+            if (result == 120)
+                Console.WriteLine("PASS");
+            else
+                Console.WriteLine("FAIL");
         }
 
     }
