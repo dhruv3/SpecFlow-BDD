@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using SpecFlow.Assist.Dynamic;
 
 namespace SampleIntroApp
 {
@@ -35,7 +36,18 @@ namespace SampleIntroApp
         [When(@"I fill all the mandatory details in form")]
         public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
         {
-            var details = table.CreateSet<StepDefinitions.EmployeeDetails>();
+            //var details = table.CreateSet<StepDefinitions.EmployeeDetails>();
+            //foreach(var item in details)
+            //{
+            //    Console.WriteLine("Details of Employee : " + item.Name);
+            //    Console.WriteLine(item.Age);
+            //    Console.WriteLine(item.Email);
+            //    Console.WriteLine(item.Name);
+            //    Console.WriteLine(item.Phone);
+            //}
+
+            //Work with Dynamic Assist
+            var details = table.CreateDynamicSet();
             foreach(var item in details)
             {
                 Console.WriteLine("Details of Employee : " + item.Name);
