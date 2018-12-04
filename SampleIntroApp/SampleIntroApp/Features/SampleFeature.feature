@@ -33,5 +33,11 @@ Examples:
 	|Jane	|80		|8008009090	|
 	|Joe	|20		|8008009090	|
 
+Scenario: Check if I could get the details entered via Table from Extended Steps
+	When I fill all the mandatory details in form
+	|Name	|Age	|Phone		|Email			|
+	|John	|40		|9009009090	|john@gmail.com	|
+	Then I should get the same value from Extended Steps
+
 
 

@@ -12,6 +12,12 @@ namespace SampleIntroApp
     [Binding]
     class SampleFeatureSteps
     {
+        public readonly StepDefinitions.EmployeeDetails employee;
+        //this will enable context injection feature
+        public SampleFeatureSteps(StepDefinitions.EmployeeDetails emp)
+        {
+            this.employee = emp;
+        }
         [Given(@"I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredIntoTheCalculator(int numbers)
         {
@@ -47,15 +53,24 @@ namespace SampleIntroApp
             //}
 
             //Work with Dynamic Assist
-            var details = table.CreateDynamicSet();
-            foreach(var item in details)
+            //var details = table.CreateDynamicSet();
+            //foreach(var item in details)
+            //{
+            //    Console.WriteLine("Details of Employee : " + item.Name);
+            //    Console.WriteLine(item.Age);
+            //    Console.WriteLine(item.Email);
+            //    Console.WriteLine(item.Name);
+            //    Console.WriteLine(item.Phone);
+            //}
+            var data = table.CreateDynamicSet();
+            foreach(var item in data)
             {
-                Console.WriteLine("Details of Employee : " + item.Name);
-                Console.WriteLine(item.Age);
-                Console.WriteLine(item.Email);
-                Console.WriteLine(item.Name);
-                Console.WriteLine(item.Phone);
+                employee.Age = (int)item.Age;
+                employee.Email = (string)item.Email;
+                employee.Name = (string)item.Name;
+                employee.Phone = (long)item.Phone;
             }
+
         }
 
         [When(@"I fill all the mandatory details in form (.*), (.*) and (.*)")]

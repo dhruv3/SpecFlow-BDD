@@ -71,6 +71,7 @@
       <DependentUpon>SampleFeature.feature</DependentUpon>
     </Compile>
     <Compile Include="StepDefinitions\EmployeeDetails.cs" />
+    <Compile Include="StepDefinitions\ExtendedSteps.cs" />
     <Compile Include="StepDefinitions\SampleFeatureSteps.cs" />
     <Compile Include="TestFixture.cs" />
   </ItemGroup>

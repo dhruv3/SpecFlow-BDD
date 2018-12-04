@@ -143,6 +143,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Check if I could get the details entered via Table from Extended Steps")]
+        public virtual void CheckIfICouldGetTheDetailsEnteredViaTableFromExtendedSteps()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if I could get the details entered via Table from Extended Steps", null, ((string[])(null)));
+#line 36
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Age",
+                        "Phone",
+                        "Email"});
+            table2.AddRow(new string[] {
+                        "John",
+                        "40",
+                        "9009009090",
+                        "john@gmail.com"});
+#line 37
+ testRunner.When("I fill all the mandatory details in form", ((string)(null)), table2, "When ");
+#line 40
+ testRunner.Then("I should get the same value from Extended Steps", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
